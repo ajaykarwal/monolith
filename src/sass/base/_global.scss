@@ -1,0 +1,12 @@
+/// <reference path="monolith" />
+// ----------------------------------------
+// global settings
+// ----------------------------------------
+
+body {
+  background-color: $background-color;
+  font-family: $font-family-base;
+  font-style: $font-style-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+}
