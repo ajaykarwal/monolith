@@ -45,7 +45,9 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
 
     // Compile Sass files to Default.css
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    // outputStyle options: nested, compact, expanded, compressed
+    
+    .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
     .pipe(autoprefixer({ browsers: ['> 1%', 'IE 6'], cascade: true }))
     .pipe(gulp.dest(paths.styles.dest))
 
