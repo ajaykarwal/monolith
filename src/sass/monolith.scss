@@ -1,14 +1,16 @@
-// Monolith: Copyright (c) 2016 Ajay Karwal
+/**
+ *
+ * Monolith - A boilerplate Sass framework.
+ * Copyright (c) 2016 Ajay Karwal
+ *
+ */
 
-// Variable config
-@import 
+// @import 'settings/reset';
+@import 'settings/config';
 
-// 'settings/reset',
-'settings/config',
+@import 'base/global';
+@import 'base/grid';
+@import 'base/padding';
+@import 'base/margin';
 
-//'mixins/grid',
-
-'base/global'
-
-
-;
+@import 'helper/clearfix';

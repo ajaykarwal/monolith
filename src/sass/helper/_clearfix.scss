@@ -1,0 +1,15 @@
+/// <reference path="../Default.scss" />
+// ----------------------------------------
+// Clearfix
+// ----------------------------------------
+%clearfix {
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
+.clearfix {
+  @extend %clearfix;
+}

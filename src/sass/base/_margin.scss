@@ -1,0 +1,33 @@
+/// <reference path="monolith" />
+
+/**
+ *
+ * MARGIN - Generates margin classes
+ *
+ */
+
+ @for $i from 1 through $margin-count {
+  .m#{$i} {
+    margin: #{$i * .5}rem;
+  }
+  .mt#{$i} {
+    margin-top: #{$i * .5}rem;
+  }
+  .mb#{$i} {
+    margin-bottom: #{$i * .5}rem;
+  }
+  .ml#{$i} {
+    margin-left: #{$i * .5}rem;
+  }
+  .mr#{$i} {
+    margin-right: #{$i * .5}rem;
+  }
+  .my#{$i} {
+    margin-bottom: #{$i * .5}rem;
+    margin-top: #{$i * .5}rem;
+  }
+  .mx#{$i} {
+    margin-left: #{$i * .5}rem;
+    margin-right: #{$i * .5}rem;
+  }
+}

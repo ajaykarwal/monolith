@@ -1,11 +1,71 @@
 /// <reference path="monolith" />
 // ----------------------------------------
-// configuration settings
+// Configuration settings
 // ----------------------------------------
 
-$background-color:    #f2f2f2;
+
+// Colors
+$brand-primary:       #263238;
+$brand-secondary:     #546e7a;
+$accent-color:        #ffa000;
+
+$brand-white:         #fafafa;
+$brand-black:         #1a1a1a;
+$pure-white:          #ffffff;
+$pure-black:          #000000;
+
+$grey-light:          #cccccc;
+$grey-medium:         #888888;
+$grey-dark:           #333333;
+
+$background-color:    $brand-white;
+
+
+
+// Typography
+$fontawesome-version: 4.7.0;
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,600italic,400italic);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/#{$fontawesome-version}/css/font-awesome.min.css);
+
+$font-family-base:    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-family-brand:   'Open Sans', sans-serif;
+$font-family-icon:    'FontAwesome';
 
 $font-size-base:      16px;
-$font-family-base:    sans-serif;
 $font-style-base:     normal;
 $font-weight-base:    normal;
+
+$line-height-base:    1.4;
+
+
+
+// Spacing units
+$space:                 16px;
+$space-sm:              $space / 2; // 8px
+$space-md:              $space * 2; // 32px
+$space-lg:              $space * 3; // 48px
+$space-xl:              $space * 4; // 64px
+
+
+
+
+// Loop counts
+$column-count:    12;
+$margin-count:    8; //Generates margin classes 0.5rem increments
+$padding-count:   8; //Generates padding classes in 0.5rem increments
+$layout-count:    25; //Generates height/width classes in 0.5rem increments
+
+
+$site-width: 100%;
+$content-width: 1200px;
+// Breakpoints
+$breakpoints: (
+  xs: 32em,
+  sm: 40em,
+  md: 52em,
+  lg: 64em,
+  );
+
+
+

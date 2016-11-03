@@ -1,0 +1,43 @@
+/// <reference path="monolith" />
+
+/**
+ *
+ * GRID - Sets up the grid column classes at all breakpoints.
+ *
+ */
+
+ .container {
+  margin: 0 auto;
+  width: $site-width;
+  max-width: $content-width;
+  padding: 0 $space;
+}
+
+.row {
+  @extend %clearfix;
+  .row {
+    margin-left: $space *-1;
+    margin-right: $space *-1;
+  }
+}
+
+// Default Breakpoint (Mobile) Columns
+@for $i from 1 through $column-count {
+  .col-#{$i} {
+    width: calc(#{$i}/#{$column-count} * 100%);
+  }
+}
+
+@if (variable-exists(breakpoints)) {
+  @each $bp-name,
+  $bp-value in $breakpoints {
+    @media (min-width: $bp-value) {
+      @for $i from 1 through $column-count {
+        .col-#{$bp-name}-#{$i} {
+          width: calc(#{$i}/#{$column-count} * 100%);
+          float: left;
+        }
+      }
+    }
+  }
+}

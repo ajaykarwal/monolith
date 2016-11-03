@@ -1,7 +1,14 @@
 /// <reference path="monolith" />
-// ----------------------------------------
-// global settings
-// ----------------------------------------
+
+/**
+ *
+ * GLOBAL - Base styling for HTML elements
+ *
+ */
+
+ * {
+  box-sizing: border-box;
+}
 
 body {
   background-color: $background-color;
@@ -9,4 +16,5 @@ body {
   font-style: $font-style-base;
   font-size: $font-size-base;
   font-weight: $font-weight-base;
+  line-height: $line-height-base;
 }
