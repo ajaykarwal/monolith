@@ -6,7 +6,15 @@
  *
  */
 
- .container {
+// Breakpoints
+$breakpoints: (
+  xs: 320px,
+  sm: 420px,
+  md: 768px,
+  lg: 1024px,
+  );
+
+.container {
   margin: 0 auto;
   width: $site-width;
   max-width: $content-width;
@@ -15,26 +23,36 @@
 
 .row {
   @extend %clearfix;
+  display: flex;
+  flex-wrap: wrap;
+
+  // Negative margins on nested rows.
   .row {
     margin-left: $space *-1;
     margin-right: $space *-1;
   }
 }
 
-// Default Breakpoint (Mobile) Columns
-@for $i from 1 through $column-count {
-  .col-#{$i} {
-    width: calc(#{$i}/#{$column-count} * 100%);
+// Default all columns to 100% unless a specific column size is set.
+@if (variable-exists(breakpoints)) {
+  @each $bp-name, $bp-value in $breakpoints {
+    @for $i from 1 through $column-count {
+      [class^="col-"] {
+        width: 100%;
+        padding: $space;
+      }
+    }
   }
 }
 
+// Set column widths at all breakpoint widths.
 @if (variable-exists(breakpoints)) {
-  @each $bp-name,
-  $bp-value in $breakpoints {
+  @each $bp-name, $bp-value in $breakpoints {
     @media (min-width: $bp-value) {
       @for $i from 1 through $column-count {
         .col-#{$bp-name}-#{$i} {
-          width: calc(#{$i}/#{$column-count} * 100%);
+          width: calc(#{$i} / #{$column-count} * 100%);
+          padding: $space;
           float: left;
         }
       }
